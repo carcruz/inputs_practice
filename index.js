@@ -58,4 +58,3 @@ const nombreCompleto_3 = retornarNombreCompleto('Lulu', 'Rojas');
 
 console.log(nombreCompleto);
 console.log(nombreCompleto_2);
-console.log(nombreCompleto_3);
