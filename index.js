@@ -1,60 +1,67 @@
-// VARIABLES
-// tipo de acceso variable -> const & let
-const fruta = "apple";
+// Create Rrefresh Update Delete
+// To-do
 
-// tipo de dato ->
-//  Strings(cadena de texto)
-//  Number(integer, double)
-//  Boolean
-//  Objects
-//  Arrays (listas)
-//  Functions*
+// GLOBALES
+const appDOM = document.querySelector("#app");
+const listDOM = document.querySelector("#todo-list");
+const tareas = [
+  {
+    nombre: "tarea mate",
+    desc: "...",
+  },
+  {
+    nombre: "tarea civica",
+    desc: "...",
+  },
+  {
+    nombre: "tarea espa",
+    desc: "...",
+  },
+];
+const totalTareas = tareas.length;
 
-// Strings
-const text_0 = 'Lulu';
-const text_1 = "";
-// template string
-const text_2 = ``;
-
-// Numbers
-// interger
-const num = 23;
-// double -> decimales
-const double = 23.01;
-
-// Boolean
-const bool = true;
-
-// Objects
-const carro = {
-  color: 'red'
+function listarEnDOM() {
+  // CICLO
+  for (let i = 0; i < totalTareas; i++) {
+    const tarea = tareas[i];
+    const newElementDOM = document.createElement('li');
+    newElementDOM.textContent = tarea.nombre;
+    listDOM.appendChild(newElementDOM);
+  }
 }
 
-// Arrays
-const arreglo = ['hola', 'mundo', 'genial'];
+listarEnDOM();
 
-// --------- --------- --------- --------- //
-
-// Functions
-// no retorno - solo hacen cosas
-function saludar() {
-  const persona = 'Julio';
-  console.log('hola', persona);
+// creacion de Nodes
+// 1. crear Nodes en el JS
+// 2. inyect en HTML
+function agregarTextoBienvenida(texto = de) {
+  // document.createElement: crear nodos
+  const introDOM = document.createElement("p");
+  // style: alterar estilo
+  introDOM.style.color = "green";
+  // textContent: agregar contenido de texto
+  introDOM.textContent = texto;
+  // console.log(introDOM);
+  // appendChild: agregar nodo hijo
+  appDOM.appendChild(introDOM);
 }
+// ejecucion
+agregarTextoBienvenida('Bienvenidos a mi to-do');
 
-// retorno - retornan cosas
-function retornarNombreCompleto(nombre, apellido) {
-  const full_name = `${nombre} ${apellido}`;
-  return full_name;
+// 1. function
+// tipos: ejecucion
+function inprimirEnConsola(texto = "") {
+  console.log(texto);
 }
+// inprimirEnConsola();
+// tipos: returno
+function suma(a, b) {
+  return a + b;
+}
+const result = suma(3333, 3);
 
-saludar();
-
-// const nombre = 'Susi';
-// const apellido = 'Castillo';
-const nombreCompleto = retornarNombreCompleto('Susi', 'Castillo');
-const nombreCompleto_2 = retornarNombreCompleto('Lulu', 'Castillo');
-const nombreCompleto_3 = retornarNombreCompleto('Lulu', 'Rojas');
-
-console.log(nombreCompleto);
-console.log(nombreCompleto_2);
+// 2. Arrow function
+// const agregarSaludo = (text = '') => {
+//   console.log(text);
+// }
